@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "baseUrl": "."
+  },
+  "include": ["next-env.d.ts", "src/app/**/*.ts", "src/app/**/*.tsx", "src/components/ui/**/*.ts", "src/components/ui/**/*.tsx", "src/components/layout/**/*.ts", "src/components/layout/**/*.tsx", "src/lib/**/*.ts", "src/lib/**/*.tsx", "src/types/**/*.ts", "src/types/**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "node_modules.bak", "dist", ".next.bak", ".next.bak2", ".next.bak3", "src/components/AgenticAnalysis.tsx", "src/components/AnalysisOutput.tsx", "src/components/ArbitrageResult.tsx", "src/components/ArbitrageScanner.tsx", "src/components/EdgeSignal.tsx", "src/components/SpreadMatrix.tsx", "src/components/MarketScanner/**/*", "src/types.ts", "src/mockData.ts", "src/App.tsx", "src/main.tsx", "src/vite-env.d.ts"]
+}

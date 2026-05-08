@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --terminal-bg: #0a0a0f;
+  --terminal-surface: #12121a;
+  --terminal-border: #1a1a24;
+  --terminal-hover: #1e1e2a;
+  --accent-green: #00ff88;
+  --accent-cyan: #00d4ff;
+  --accent-amber: #ffb800;
+  --accent-red: #ff4444;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--terminal-bg);
+  color: #e5e5e5;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom scrollbar for terminal look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a3a;
+}
+
+/* Monospace data styling */
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* Glow effects for accents */
+.glow-green {
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Animation for pulsing elements */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Terminal scanline effect (subtle) */
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  opacity: 0.3;
+}

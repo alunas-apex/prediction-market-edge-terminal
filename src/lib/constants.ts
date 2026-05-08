@@ -1,0 +1,207 @@
+import { NavItem, MarketData, PredictionMarket, Alert, ArbitrageOpportunity, AIInsight, ConnectionStatus } from "@/types/index";
+// Navigation items
+export const NAV_ITEMS: NavItem[] = [
+  { id: "dashboard", label: "Dashboard", icon: "LayoutDashboard", path: "/dashboard" },
+  { id: "markets", label: "Markets", icon: "TrendingUp", path: "/markets" },
+  { id: "ai-analysis", label: "AI Analysis", icon: "Brain", path: "/ai-analysis" },
+  { id: "portfolio", label: "Portfolio", icon: "Briefcase", path: "/portfolio" },
+  { id: "arbitrage", label: "Arbitrage", icon: "ArrowLeftRight", path: "/arbitrage" },
+];
+// Mock market data
+export const MOCK_MARKETS: PredictionMarket[] = [
+  {
+    id: "btc-price",
+    name: "Bitcoin Price",
+    symbol: "BTC",
+    price: 67432.50,
+    change: 1243.20,
+    changePercent: 1.88,
+    volume: 28934567,
+    high: 68100.00,
+    low: 65890.00,
+    prediction: 71200.00,
+    liquidity: 2340000,
+    impliedProbability: 0.52,
+    lastUpdate: "2026-05-09T03:06:00Z",
+  },
+  {
+    id: "eth-upgrade",
+    name: "Ethereum Upgrade",
+    symbol: "ETH",
+    price: 0.74,
+    change: 0.02,
+    changePercent: 2.78,
+    volume: 1245000,
+    high: 0.78,
+    low: 0.71,
+    prediction: 0.80,
+    liquidity: 890000,
+    impliedProbability: 0.68,
+    lastUpdate: "2026-05-09T03:05:00Z",
+  },
+  {
+    id: "fed-rate",
+    name: "Fed Rate Decision",
+    symbol: "FED",
+    price: 0.45,
+    change: -0.05,
+    changePercent: -10.00,
+    volume: 567000,
+    high: 0.52,
+    low: 0.42,
+    prediction: 0.50,
+    liquidity: 1200000,
+    impliedProbability: 0.45,
+    lastUpdate: "2026-05-09T03:04:00Z",
+  },
+  {
+    id: "election-wins",
+    name: "Election Outcomes",
+    symbol: "ELEC",
+    price: 0.62,
+    change: 0.08,
+    changePercent: 14.81,
+    volume: 2340000,
+    high: 0.65,
+    low: 0.54,
+    prediction: 0.58,
+    liquidity: 3400000,
+    impliedProbability: 0.62,
+    lastUpdate: "2026-05-09T03:06:00Z",
+  },
+  {
+    id: "apple-earnings",
+    name: "Apple Earnings",
+    symbol: "AAPL",
+    price: 0.88,
+    change: 0.03,
+    changePercent: 3.53,
+    volume: 890000,
+    high: 0.91,
+    low: 0.85,
+    prediction: 0.92,
+    liquidity: 1560000,
+    impliedProbability: 0.88,
+    lastUpdate: "2026-05-09T03:05:00Z",
+  },
+  {
+    id: "sp500-end",
+    name: "S&P 500 Year End",
+    symbol: "SPX",
+    price: 0.55,
+    change: -0.02,
+    changePercent: -3.51,
+    volume: 4450000,
+    high: 0.58,
+    low: 0.53,
+    prediction: 0.60,
+    liquidity: 8900000,
+    impliedProbability: 0.55,
+    lastUpdate: "2026-05-09T03:06:00Z",
+  },
+];
+// Mock alerts
+export const MOCK_ALERTS: Alert[] = [
+  {
+    id: "alert-1",
+    type: "success",
+    title: "Arbitrage Detected",
+    message: "BTC price difference detected between exchanges: 0.42% margin",
+    timestamp: "2026-05-09T03:05:00Z",
+    read: false,
+  },
+  {
+    id: "alert-2",
+    type: "warning",
+    title: "High Volatility",
+    message: "Fed Rate market experiencing unusual volume",
+    timestamp: "2026-05-09T03:04:00Z",
+    read: false,
+  },
+  {
+    id: "alert-3",
+    type: "info",
+    title: "Portfolio Update",
+    message: "Your BTC position is up 2.34%",
+    timestamp: "2026-05-09T03:03:00Z",
+    read: true,
+  },
+];
+// Mock arbitrage opportunities
+export const MOCK_ARBITRAGE: ArbitrageOpportunity[] = [
+  {
+    id: "arb-1",
+    marketA: "Polymarket",
+    marketB: "Kalshi",
+    priceDiff: 0.42,
+    profitPercent: 3.2,
+    expiration: "2026-05-15T00:00:00Z",
+    confidence: 0.89,
+  },
+  {
+    id: "arb-2",
+    marketA: "Betfair",
+    marketB: "Polymarket",
+    priceDiff: 0.28,
+    profitPercent: 1.8,
+    expiration: "2026-05-20T00:00:00Z",
+    confidence: 0.72,
+  },
+];
+// Mock AI insights
+export const MOCK_INSIGHTS: AIInsight[] = [
+  {
+    id: "insight-1",
+    market: "BTC",
+    signal: "bullish",
+    confidence: 0.78,
+    summary: "Strong buy signal based on on-chain metrics and market momentum",
+    factors: ["Exchange inflows decreasing", "Hash rate at all-time high", "ETF inflows continues"],
+    timestamp: "2026-05-09T03:00:00Z",
+  },
+  {
+    id: "insight-2",
+    market: "ETH",
+    signal: "neutral",
+    confidence: 0.55,
+    summary: "Hold position recommended due to conflicting signals",
+    factors: ["Upgrade uncertainty", "Gas fees elevated", "Staking withdrawals stable"],
+    timestamp: "2026-05-09T02:55:00Z",
+  },
+  {
+    id: "insight-3",
+    market: "FED",
+    signal: "bearish",
+    confidence: 0.82,
+    summary: "Short position recommended on Fed rate decisions",
+    factors: ["Inflation data stronger than expected", "Fed speakers hawkish", "Economic data mixed"],
+    timestamp: "2026-05-09T02:50:00Z",
+  },
+];
+// Default connection status
+export const DEFAULT_CONNECTION_STATUS: ConnectionStatus = {
+  status: "connected",
+  latency: 42,
+  lastSync: "2026-05-09T03:06:00Z",
+};
+// Theme constants
+export const THEME = {
+  colors: {
+    terminal: {
+      bg: "#0a0a0f",
+      surface: "#12121a",
+      border: "#1a1a24",
+      hover: "#1e1e2a",
+    },
+    accent: {
+      green: "#00ff88",
+      cyan: "#00d4ff",
+      amber: "#ffb800",
+      red: "#ff4444",
+    },
+  },
+  fonts: {
+    mono: "JetBrains Mono, Fira Code, Consolas, monospace",
+    sans: "Inter, system-ui, sans-serif",
+  },
+} as const;
